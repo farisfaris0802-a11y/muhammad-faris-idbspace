@@ -1,0 +1,28 @@
+{
+  "name": "idb-space",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Sistem Peminjaman Ruang IDB Bali — frontend mockup (mock API)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

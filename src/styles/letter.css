@@ -1,0 +1,43 @@
+/*
+ * Stylesheet Tailwind (v4) khusus fitur Surat Izin (Letter).
+ * Dimuat SETELAH global.css — aturan Tailwind berada di @layer sehingga
+ * token/plain-CSS kampus tetap unggulan bila ada konflik.
+ */
+@import 'tailwindcss';
+
+@theme {
+  --font-letter: 'Times New Roman', Times, 'Liberation Serif', serif;
+}
+
+/* Bentuk cetak A4: saat window.print() dipanggil, hanya kertas surat yang tampil. */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  /* Modal surat dirender via portal langsung ke <body> (overlay = anak body). */
+  body.printing-letter > *:not(.letter-overlay) {
+    display: none !important;
+  }
+
+  body.printing-letter > .letter-overlay {
+    position: static;
+    display: block;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .letter-overlay .letter-paper {
+    box-shadow: none;
+    margin: 0;
+    width: 210mm;
+    min-height: 0;
+    zoom: 1 !important;
+  }
+
+  .letter-overlay .letter-paper .no-print {
+    display: none !important;
+  }
+}
